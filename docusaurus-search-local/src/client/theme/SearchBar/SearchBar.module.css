@@ -226,6 +226,22 @@ html[data-theme="dark"] .noResultsIcon {
   margin-left: 16px;
 }
 
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 0.75rem;
+  width: 1rem;
+  height: 1rem;
+  color: var(--ifm-navbar-search-input-color);
+  pointer-events: none;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.searchInput {
+  background-image: none;
+}
+
 .searchBarContainer .searchBarLoadingRing {
   display: none;
   position: absolute;
@@ -250,6 +266,10 @@ html[data-theme="dark"] .noResultsIcon {
 
 .searchIndexLoading :global(.navbar__search-input) {
   background-image: none;
+}
+
+.searchIndexLoading .searchIcon {
+  display: none;
 }
 
 .searchBarContainer.searchIndexLoading .searchBarLoadingRing {

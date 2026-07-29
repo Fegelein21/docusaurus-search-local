@@ -513,6 +513,17 @@ export default function SearchBar({
       // Manually make the search bar be LTR even if in RTL
       dir="ltr"
     >
+      <svg
+        aria-hidden="true"
+        className={styles.searchIcon}
+        focusable="false"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill="currentColor"
+          d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"
+        />
+      </svg>
       <input
         placeholder={translate({
           id: "theme.SearchBar.label",
