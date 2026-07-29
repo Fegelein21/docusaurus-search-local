@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.55.3](https://github.com/easyops-cn/docusaurus-search-local/compare/v0.55.2...v0.55.3) (2026-07-29)
+
+
+### Bug Fixes
+
+* trigger a release for refining search icon for [#577](https://github.com/easyops-cn/docusaurus-search-local/issues/577) ([9a7eb91](https://github.com/easyops-cn/docusaurus-search-local/commit/9a7eb91393f389838cc31f45e4f4737dc4bb325e))
+
 ## [0.55.2](https://github.com/easyops-cn/docusaurus-search-local/compare/v0.55.1...v0.55.2) (2026-05-31)
 
 
