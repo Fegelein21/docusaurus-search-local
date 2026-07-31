@@ -65,6 +65,7 @@ const schema = Joi.object<PluginOptions>({
   useAllContextsWithNoSearchContext: Joi.boolean().default(false),
   forceIgnoreNoIndex: Joi.boolean().default(false),
   fuzzyMatchingDistance: Joi.number().default(1),
+  maxIndexedHeaderTag: Joi.number().default(3),
   askAi: Joi.object().optional(),
 });
 

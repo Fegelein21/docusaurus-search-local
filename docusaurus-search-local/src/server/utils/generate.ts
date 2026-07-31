@@ -23,6 +23,7 @@ export function generate(config: ProcessedPluginOptions, dir: string): string {
     hideSearchBarWithNoSearchContext,
     useAllContextsWithNoSearchContext,
     fuzzyMatchingDistance,
+    maxIndexedHeaderTag,
     askAi,
   } = config;
   const indexHash = getIndexHash(config);
@@ -165,9 +166,8 @@ export function generate(config: ProcessedPluginOptions, dir: string): string {
   constantContents.push(
     `export const searchIndexUrl = ${JSON.stringify(searchIndexUrl)};`,
     `export const searchResultLimits = ${JSON.stringify(searchResultLimits)};`,
-    `export const fuzzyMatchingDistance = ${JSON.stringify(
-      fuzzyMatchingDistance
-    )};`
+    `export const fuzzyMatchingDistance = ${JSON.stringify(fuzzyMatchingDistance)};`,
+    `export const maxIndexedHeaderTag = ${JSON.stringify(maxIndexedHeaderTag)};`
   );
   fs.writeFileSync(
     path.join(dir, "generated-constants.js"),
