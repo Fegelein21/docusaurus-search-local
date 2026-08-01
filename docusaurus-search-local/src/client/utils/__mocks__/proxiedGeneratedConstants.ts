@@ -3,7 +3,7 @@ export let removeDefaultStopWordFilter: string[] = [];
 export const searchIndexUrl = "search-index{dir}.json?_=abc";
 export const searchResultLimits = 8;
 export let fuzzyMatchingDistance = 0;
-export let maxIndexedHeaderTag = 3;
+export let maxIndexableHeaderTagLevel = 3;
 
 export function __setLanguage(value: string[]): void {
   language = value;
@@ -17,6 +17,6 @@ export function __setFuzzyMatchingDistance(value: number): void {
   fuzzyMatchingDistance = value;
 }
 
-export function __setMaxIndexedHeaderTag(value: number): void {
-  maxIndexedHeaderTag = value;
+export function __setMaxIndexableHeaderTagLevel(value: number): void {
+  maxIndexableHeaderTagLevel = value;
 }

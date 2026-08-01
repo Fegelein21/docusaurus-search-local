@@ -230,7 +230,7 @@ export interface PluginOptions {
    *
    * @default 3
    */
-  maxIndexedHeaderTag?: number;
+  maxIndexableHeaderTagLevel?: number;
 
   /**
    * Configuration for Ask AI widget integration. When not set, the Ask AI feature will be disabled.

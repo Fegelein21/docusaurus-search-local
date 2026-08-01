@@ -1,15 +1,13 @@
 import { blogPostContainerID } from "@docusaurus/utils-common";
 import { ParsedDocument, ParsedDocumentSection } from "../../shared/interfaces";
 import { getCondensedText } from "./getCondensedText";
-import { maxIndexedHeaderTag } from "./proxiedGeneratedConstants";
 
-const safeMaxIndexedHeaderTag = maxIndexedHeaderTag >= 1 && maxIndexedHeaderTag <= 6
-  ? maxIndexedHeaderTag
-  : 3;
-const HEADINGS = Array.from({ length: safeMaxIndexedHeaderTag }, (_, i) => `h${i + 1}`).join(", ");
 // const SUB_HEADINGS = "h2, h3";
 
-export function parseDocument($: cheerio.Root): ParsedDocument {
+export function parseDocument(
+  $: cheerio.Root,
+  maxIndexableHeaderTagLevel
+): ParsedDocument {
   const $pageTitle = $("article h1").first();
   const pageTitle = $pageTitle.text();
   const description = $("meta[name='description']").attr("content") || "";
@@ -37,6 +35,8 @@ export function parseDocument($: cheerio.Root): ParsedDocument {
       breadcrumb.push($(element).text().trim());
     });
   }
+
+  const HEADINGS = Array.from({ length: maxIndexableHeaderTagLevel }, (_, i) => `h${i + 1}`).join(", ");
 
   $("article")
     .find(HEADINGS)
