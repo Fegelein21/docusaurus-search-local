@@ -6,7 +6,7 @@ import { getCondensedText } from "./getCondensedText";
 
 export function parseDocument(
   $: cheerio.Root,
-  maxIndexableHeaderTagLevel
+  maxIndexableHeaderTagLevel?: number
 ): ParsedDocument {
   const $pageTitle = $("article h1").first();
   const pageTitle = $pageTitle.text();
@@ -36,7 +36,7 @@ export function parseDocument(
     });
   }
 
-  const HEADINGS = Array.from({ length: maxIndexableHeaderTagLevel }, (_, i) => `h${i + 1}`).join(", ");
+  const HEADINGS = Array.from({ length: maxIndexableHeaderTagLevel ?? 3 }, (_, i) => `h${i + 1}`).join(", ");
 
   $("article")
     .find(HEADINGS)
